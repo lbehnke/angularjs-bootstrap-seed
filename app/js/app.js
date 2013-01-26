@@ -8,6 +8,6 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
     $routeProvider.when('/project_a', {templateUrl: 'partials/project_a.html', controller: GenericViewCtrl});
     $routeProvider.when('/project_b', {templateUrl: 'partials/project_b.html', controller: GenericViewCtrl});
     $routeProvider.when('/contact', {templateUrl: 'partials/contact.html', controller: ContactViewCtrl});
-    $routeProvider.when('/impress', {templateUrl: 'partials/impress.html', controller: GenericViewCtrl});
+    $routeProvider.when('/imprint', {templateUrl: 'partials/imprint.html', controller: GenericViewCtrl});
     $routeProvider.otherwise({redirectTo: '/home'});
   }]);

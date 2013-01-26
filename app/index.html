@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
   <title>AngularJS-Bootstrap Site</title>
 
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 
 </head>
-<body>
+<body >
 
     <!-- Navigation -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -45,7 +45,7 @@
                             </ul>
                         </li>
                         <li><a href="#/contact">Contact</a></li>
-                        <li><a href="#/impress">Impress</a></li>
+                        <li><a href="#/imprint">Inprint</a></li>
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" ng-app="myApp">
 
         <!--Here go the partials -->
         <div ng-view></div>
