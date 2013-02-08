@@ -1,65 +1,72 @@
 <div class="page-header">
-    <h1>Contact <small>form</small></h1>
+    <h1>Contact</h1>
 </div>
 
 <!-- Note that novalidate is used to disable browser's native form validation. -->
-
-<div>
-<form novalidate class="well">
+<form novalidate name="contactForm" class="well form-container">
 
 
-    <label>Your Name</label>
-    <input ng-model="form.name" type="text" class="span6" placeholder="" />
+    <label>Name</label>
+    <input ng-model="form.name" name="name" type="text" class="span6" placeholder="" required />
+    <span ng-show="contactForm.name.$error.required" class="help-inline">manditory</span>
 
-    <label>Your email address</label>
-    <input ng-model="form.email"  type="text" class="span6" placeholder="example@me.com" />
+    <label>Email address</label>
+    <input ng-model="form.email" name="email" type="email" class="span6" placeholder="" required />
+    <span ng-show="contactForm.email.$error.required" class="help-inline">manditory</span>
+    <span ng-show="contactForm.email.$error.email" class="help-inline">Invalid</span>
+
+    <label>Website</label>
+    <input ng-model="form.website" name="website" type="text" class="span6" placeholder="" />
+
 
     <div class="control-group">
         <label class="control-label" for="subjectField">Subject</label>
         <div class="controls">
-            <select ng-model="form.subject"  id="subjectField">
-                <option>Bug</option>
+            <select ng-model="form.subject" name="subject" id="subjectField" required>
+                <option>Error</option>
                 <option>Enhancement</option>
-                <option>Comment</option>
                 <option>Question</option>
                 <option>Other</option>
             </select>
+            <span ng-show="contactForm.subject.$error.required" class="help-inline">manditory</span>
         </div>
     </div>
 
     <div class="control-group">
         <label class="control-label" for="projectField">Project</label>
         <div class="controls">
-            <select ng-model="form.project"  id="projectField">
+            <select ng-model="form.project" name="project" id="projectField" required>
                 <option>Project A</option>
                 <option>Project B</option>
             </select>
+            <span ng-show="contactForm.project.$error.required" class="help-inline">manditory</span>
         </div>
     </div>
 
     <div class="control-group">
         <label class="control-label" for="message">Your message</label>
-        <span class="help-block">Please do not forget to mention the version you use!</span>
         <div class="controls">
-            <textarea ng-model="form.message" class="input-xlarge span11" id="message" rows="5"></textarea>
+            <textarea ng-model="form.message" name="message" class="input-xlarge span11" id="message" rows="5" required></textarea>
         </div>
+        <span ng-show="contactForm.message.$error.required" class="help-inline">manditory</span>
     </div>
 
-    <label class="checkbox">
-        <input ng-model="form.newsletter" type="checkbox">Subscribe to newsletter</input>
-    </label>
 
     <div class="form-actions">
-        <button ng-click="sendForm(form)" class="btn btn-primary" >Send &raquo;</button>
+        <button ng-click="sendForm()" ng-disabled="contactForm.$invalid" class="btn btn-primary" >Send message &raquo;</button>
         <button ng-click="resetForm()" class="btn">Reset</button>
     </div>
 
 </form>
 
-<!-- Just for testing -->
+<!-- Just for testing
 <h3>Debug output</h3>
-<pre>sent form = {{lastForm | json}}</pre>
+<pre>
+ sent form = {{lastForm | json}}
+ result = {{resultData | json}}
 
-</div>
+
+</pre>
+-->
 
 
