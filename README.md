@@ -10,4 +10,4 @@ This web application template integrates
 
 Use it as a starting point to create your own web application.
 
-An example website based on this seed visited [here](http://www.apporiented.com)
+An example website based on this seed can be visited [here](http://www.apporiented.com).
